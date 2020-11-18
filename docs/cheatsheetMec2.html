@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="En">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
+<meta name="description" content="How to use mec-2?">
+
+<meta name="date" content="Tue Sep 01 2020 00:00:00 GMT+0200 (Central European Summer Time)">
+<meta name="keywords" content="microjam,mec-2,cheatsheet, ">
+<title>CheatSheet for mec-2</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/vs.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.css">
+<link rel="stylesheet" href="./theme/style.css">
+</head>
+<body id="top">
+<main>
+  
+<article>
+
+<header>
+<h1>CheatSheet for mec-2</h1>
+
+
+
+<h5>Sept 2020</h5>
+<h5><b>Keywords:</b> microjam, mec-2, cheatsheet,  </h5>
+</header>
+<h2 id="prerequisite">Prerequisite</h2>
+<aside style="min-width: 40%">
+<pre><code class="code-line language-HTML"><div><span class="hljs-tag">&lt;<span class="hljs-name">mec-2</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"400"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">x0</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">y0</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">grid</span> <span class="hljs-attr">cartesian</span> <span class="hljs-attr">nodelabels</span>&gt;</span>
+{
+
+}
+<span class="hljs-tag">&lt;/<span class="hljs-name">mec-2</span>&gt;</span>
+</div></code></pre>
+<h4 id="code-1-custom-html-tag-for-mec"><strong>Code 1:</strong> Custom HTML-tag for mec-2</h4>
+</aside>
+<p>Use the code shown in the first code listing to implement mec-2 custom html element with attributes you desire to table 1.</p>
+<h4 id="table-1-attributes-of-the-mec-2-element"><strong>Table 1:</strong> Attributes of the mec-2 element</h4>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>string</td>
+<td>width of the element in px</td>
+</tr>
+<tr>
+<td>height</td>
+<td>string</td>
+<td>height of the element in px</td>
+</tr>
+<tr>
+<td>x0</td>
+<td>string</td>
+<td>x-origin of the model</td>
+</tr>
+<tr>
+<td>y0</td>
+<td>string</td>
+<td>y-origin of the model</td>
+</tr>
+<tr>
+<td>grid</td>
+<td>boolean</td>
+<td>show grid in background</td>
+</tr>
+<tr>
+<td>cartesian</td>
+<td>boolean</td>
+<td>whether cartesian is true or not</td>
+</tr>
+<tr>
+<td>darkmode</td>
+<td>boolean</td>
+<td>whether dark mode is set or not</td>
+</tr>
+<tr>
+<td>gravity</td>
+<td>boolean</td>
+<td>activate gravity</td>
+</tr>
+<tr>
+<td>pausing</td>
+<td>boolean</td>
+<td>pause the model</td>
+</tr>
+<tr>
+<td>hidenodes</td>
+<td>boolean</td>
+<td>hide nodes</td>
+</tr>
+<tr>
+<td>constraintlabels</td>
+<td>boolean</td>
+<td>show labels of constraints</td>
+</tr>
+<tr>
+<td>loadlabels</td>
+<td>boolean</td>
+<td>show labels of loads</td>
+</tr>
+<tr>
+<td>nodelabels</td>
+<td>boolean</td>
+<td>show labels of nodes</td>
+</tr>
+</tbody>
+</table>
+<aside style="min-width: 40%">
+<pre><code class="code-line language-HTML"><div><span class="hljs-tag">&lt;<span class="hljs-name">mec-2</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"240"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"250"</span> <span class="hljs-attr">x0</span>=<span class="hljs-string">"70"</span> <span class="hljs-attr">y0</span>=<span class="hljs-string">"70"</span> <span class="hljs-attr">grid</span> <span class="hljs-attr">cartesian</span> <span class="hljs-attr">nodelabels</span>&gt;</span>
+{
+"nodes": [
+    { "id":"A", "x":0, "y":0, "base":true },
+    { "id":"B", "x":100, "y":100, "idloc":"e" }
+]
+}
+<span class="hljs-tag">&lt;/<span class="hljs-name">mec-2</span>&gt;</span>
+</div></code></pre>
+<h4 id="code-2-implementation-of-nodes"><strong>Code 2:</strong> Implementation of nodes</h4>
+<mec-2 width="300" height="70" x0="70" y0="-40" grid cartesian nodelabels>
+{
+"nodes": [
+    { "id":"A", "x":0, "y":60, "base":true },
+    { "id":"B", "x":150, "y":90, "idloc":"e" }
+  ]
+}
+</mec-2>
+<h4 id="example-1-result-of-example"><strong>Example 1:</strong> Result of example 1</h4>
+</aside>
+<h2 id="nodes"><strong><a href="https://goessner.github.io/mec2/microjam.md/getting_started.html#nodes"><em>Nodes</em></a></strong></h2>
+<p>Create a node by giving the required properties. Don't forget to put the propertie key into quotation marks.</p>
+<table>
+<thead>
+<tr>
+<th>Required properties</th>
+<th>Type of value</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>the name of the node</td>
+</tr>
+<tr>
+<td>x</td>
+<td>number</td>
+<td>x-coordinate</td>
+</tr>
+<tr>
+<td>y</td>
+<td>number</td>
+<td>y-coordinate</td>
+</tr>
+<tr>
+<td><strong>Optional properties</strong></td>
+<td><strong>Type of value</strong></td>
+<td><strong>Comment</strong></td>
+</tr>
+<tr>
+<td>base</td>
+<td>string</td>
+<td>for fix node</td>
+</tr>
+<tr>
+<td>idloc</td>
+<td>number</td>
+<td>position of string</td>
+</tr>
+</tbody>
+</table>
+<br>
+<aside style="min-width: 40%">
+<pre><code class="code-line language-HTML"><div>"constraints": [
+    { "id":"a","p1":"A0","p2":"A","len":{ "type":"const" },"ori":{ "type":"drive","repeat":5,"Dt":3 } }
+]
+</div></code></pre>
+<h4 id="code-3-implementation-of-contraints"><strong>Code 3:</strong> Implementation of contraints</h4>
+<mec-2 width="100%" height="150" grid cartesian nodelabels>
+{
+    "nodes": [
+        {
+            "id":"A0", "x": 100, "y": 70, "base": true
+        }, {
+            "id":"A", "x": 100, "y": 120
+        }
+    ],
+    "constraints": [
+        {
+            "id":"a","p1":"A0","p2":"A",
+            "len":{"type":"const"},
+            "ori":{"type":"drive","repeat":5,"Dt":3 }
+        }
+    ]
+}  
+</mec-2>
+<h4 id="example-2-result-of-constraints"><strong>Example 2:</strong> Result of constraints</h4>
+<p><a href="https://gislain1993.github.io/mec2-Dokumentation/microjam.md/drive.html">see more hier</a></p>
+</aside>
+<br>
+<h2 id="constraints"><strong><a href="https://goessner.github.io/mec2/microjam.md/getting_started.html#nodes"><em>Constraints</em></a></strong></h2>
+<p>The constraint defines the relationship between two nodes. i.e. in order to define a constraint, two nodes must first of all be defined.</p>
+<table>
+<thead>
+<tr>
+<th>Required properties</th>
+<th>Type of value</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>the name of the constraint</td>
+</tr>
+<tr>
+<td>p1</td>
+<td>string</td>
+<td>first point</td>
+</tr>
+<tr>
+<td>p2</td>
+<td>string</td>
+<td>second point</td>
+</tr>
+<tr>
+<td>len</td>
+<td>object</td>
+<td>it must be specified whether the length between two nodes is variable or constant</td>
+</tr>
+<tr>
+<td>ori</td>
+<td>object</td>
+<td>it must be specified whether the orientation (angle) between two nodes is variable or constant</td>
+</tr>
+<tr>
+<td><strong>Optional properties</strong></td>
+<td><strong>Type of value</strong></td>
+<td><strong>Comment</strong></td>
+</tr>
+<tr>
+<td>drive</td>
+<td>boolean</td>
+<td>define the movement of rotation between two nodes</td>
+</tr>
+<tr>
+<td>reference</td>
+<td>boolean</td>
+<td>as its name indicates, it allows to define a movement while giving just the reference</td>
+</tr>
+<tr>
+<td>sequence</td>
+<td>boolean</td>
+<td>Every segment of a drive sequence must specify its function type func, its duration dt (always positive) and its value range dz (might be negative).</td>
+</tr>
+</tbody>
+</table>
+<br>
+<aside style="min-width:40%">
+<pre><code class="code-line language-HTML"><div>"loads":[
+    { "id":"F1","type":"force","p":"A","value":30,"w0":1.5708,"mode":"push" }
+]
+</div></code></pre>
+<h4 id="code-4-implementation-of-force"><strong>Code 4:</strong> Implementation of force</h4>
+<mec-2 width="100%" height="150" grid cartesian nodelabels>
+{
+    "gravity": true,    
+    "nodes": [       
+        { "id": "A0", "x": 80, "y": 50, "base": true},
+        { "id": "A",   "x": 150, "y": 50 }
+    ],    
+    "constraints": [
+        { "id": "a", "p1": "A0", "p2": "A", "len": {"type": "const"}}
+    ] ,
+    "loads":[{
+        "id":"F1","type":"force","p":"A",
+        "value":30,"w0":1.5708,"mode":"push"
+    }]
+}
+</mec-2>
+<h4 id="example-3-result-of-forces"><strong>Example 3:</strong> result of forces</h4>
+</aside>
+<h2 id="loads"><strong><a href="https://goessner.github.io/mec2/microjam.md/loads.html"><em>Loads</em></a></strong></h2>
+<br>
+we have two main types of loads. firstly forces and secondly springs:
+<h3 id="forces">Forces</h3>
+<table>
+<thead>
+<tr>
+<th>Required properties</th>
+<th>Type of value</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>the name of the node</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>y-coordinate</td>
+</tr>
+<tr>
+<td>p</td>
+<td>string</td>
+<td>point of application</td>
+</tr>
+<tr>
+<td><eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">w_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></eq></td>
+<td>number</td>
+<td>angle of application</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>string</td>
+<td>direction</td>
+</tr>
+</tbody>
+</table>
+<br>
+<aside style="min-width:40%">
+<pre><code class="code-line language-HTML"><div>"loads": [
+    { "id":"a","type":"spring","p1":"A0","p2":"A","k":20 }
+]
+</div></code></pre>
+<h4 id="code-5-implementation-of-springs"><strong>Code 5:</strong> Implementation of springs</h4>
+<mec-2 width="100%" height="200" grid cartesian nodelabels>
+{   
+    "nodes": [
+        { "id": "A0","x":150,"y": 150, "base": true },
+        { "id": "B0","x":100,"y": 100, "base": true },
+        { "id": "A","x": 200, "y": 100 }
+    ],
+    "constraints": [
+        {
+            "id": "b","p1": "B0","p2": "A",
+            "len": { "type": "const" }
+        }
+    ],
+    "loads": [{
+        "id": "a", "type" :"spring",
+        "p1": "A0", "p2": "A", "k": 20
+    }]
+}
+</mec-2>
+<h4 id="example-4-result-of-springs"><strong>Example 4:</strong> Result of springs</h4>
+</aside>
+<h3 id="springs">Springs</h3>
+<br>
+<br>
+<table>
+<thead>
+<tr>
+<th>Required properties</th>
+<th>Type of value</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>the name of the node</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>y-coordinate</td>
+</tr>
+<tr>
+<td>p1</td>
+<td>string</td>
+<td>first point of application</td>
+</tr>
+<tr>
+<td>p1</td>
+<td>string</td>
+<td>second point of application</td>
+</tr>
+<tr>
+<td>k</td>
+<td>number</td>
+<td>spring constante</td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<aside style="min-width: 40%">
+<pre><code class="code-line language-HTML"><div>"views": [
+    { "show":"pos","of":"C","as":"trace","Dt":2.1,"mode":"preview","fill":"orange" }, 
+    { "show":"vel","of":"C","as":"vector" }
+]
+</div></code></pre>
+<h4 id="code-6-implementation-of-views"><strong>Code 6:</strong> implementation of views</h4>
+<mec-2 width="100%" height="250" x0="0" y0="0" grid cartesian nodelabels>
+{
+    "nodes": [
+        { "id": "A0", "x": 75, "y": 60, "base": true },
+        { "id": "A", "x": 75, "y": 110 },
+        { "id": "B", "x": 275, "y": 180 },
+        { "id": "B0", "x": 275, "y": 60, "base": true },
+        { "id": "C", "x": 125, "y": 185 }
+    ],
+    "constraints": [
+        {
+            "id": "a", "p1": "A0", "p2": "A", "len": { "type":"const" },
+            "ori": { "type": "drive", "Dt": 2, "Dw": 6.28 }
+        }, {
+            "id": "b", "p1": "A", "p2": "B", "len": { "type":"const" }
+        }, {
+            "id": "c", "p1": "B0", "p2": "B", "len": { "type":"const" }
+        }, {
+            "id": "d", "p1": "B", "p2": "C", "len": { "type":"const" },
+            "ori": { "ref": "b", "type": "const" }
+        }
+    ],
+    "views": [
+        {
+            "show": "pos", "of": "C", "as": "trace", "Dt":2.1,
+            "mode":"preview", "fill":"orange"
+        }, {
+            "show": "vel", "of": "C", "as": "vector"
+        }
+    ]
+}
+</mec-2>
+<h4 id="example-5-result-of-views"><strong>Example 5:</strong> result of views</h4>
+</aside>
+<h2 id="views"><strong><a href="https://goessner.github.io/mec2/microjam.md/views.html"><em>Views</em></a></strong></h2>
+<p>Views can be used to make different properties of the model or single elements of the model visible.</p>
+<table>
+<thead>
+<tr>
+<th>Required properties</th>
+<th>Type of value</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>show</td>
+<td>string</td>
+<td>Which property is to be shown</td>
+</tr>
+<tr>
+<td>of</td>
+<td>string</td>
+<td>The <code>id</code> of the respective element</td>
+</tr>
+<tr>
+<td>as</td>
+<td>string</td>
+<td>Which type of <code>view</code> is to be used</td>
+</tr>
+<tr>
+<td>Dt</td>
+<td>number</td>
+<td>Time interval of the view to be active</td>
+</tr>
+<tr>
+<td><strong>Optional properties</strong></td>
+<td><strong>Type of value</strong></td>
+<td><strong>Comment</strong></td>
+</tr>
+<tr>
+<td>vector</td>
+<td>string</td>
+<td>to show a vector with a conforming orientation and length</td>
+</tr>
+<tr>
+<td>trace</td>
+<td>string</td>
+<td>to show the movement of a point</td>
+</tr>
+<tr>
+<td>info</td>
+<td>string</td>
+<td>to show an info cart</td>
+</tr>
+<tr>
+<td>chart</td>
+<td>string</td>
+<td>to show coherences between different entities</td>
+</tr>
+</tbody>
+</table>
+<h2 id="shapes"><a href="https://goessner.github.io/mec2/microjam.md/shapes.html"><em>Shapes</em></a></h2>
+<aside style="min-width:40%">
+<pre><code class="code-line language-HTML"><div>"shapes": [
+    { "type": "fix", "p": "A0" },
+    { "type": "flt", "p": "B0" },
+    {"type": "bar", "p1": "B0", "p2": "A"},
+    {"type": "bar", "p1": "A0", "p2": "A"}
+]
+</div></code></pre>
+<h4 id="code-7-implementation-of-shapes"><strong>Code 7:</strong> Implementation of shapes</h4>
+<mec-2 width="401" height="201" grid cartesian x0="50" y0="-25" nodelabes>
+        {
+            "nodes": [
+                { "id": "A0", "x": 75, "y": 125, "base": true },
+                { "id": "A", "x": 100, "y": 175 },
+                { "id": "B0", "x": 300, "y": 125 }
+            ],
+            "constraints": [
+                {
+                  "id": "a", "p1": "A0", "p2": "A",
+                  "len": { "type": "const" },
+                  "ori": { "type": "drive", "repeat": 3 }
+                }, {
+                  "id": "b", "p1": "B0", "p2": "A",
+                  "len": { "type": "const" }
+                }, {
+                  "id": "c", "p1": "A0", "p2": "B0",
+                  "ori": { "type": "const" }
+                }
+            ],
+            "shapes": [
+                { "type": "fix", "p": "A0" },
+                { "type": "flt", "p": "B0" },
+                {"type": "bar", "p1": "B0", "p2": "A"},
+                {"type": "bar", "p1": "A0", "p2": "A"}
+            ]
+        }
+    </mec-2>
+<h4 id="example-6-result-of-shapes"><strong>Example 6:</strong> result of shapes</h4>
+</aside>
+<p>to stylize elements with geometric forms or images.</p>
+<table>
+<thead>
+<tr>
+<th>Required properties</th>
+<th>Type of value</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>which shake should be used</td>
+</tr>
+<tr>
+<td>uri</td>
+<td>string</td>
+<td>the source of an image if we want to insert images from the Internet</td>
+</tr>
+<tr>
+<td>p</td>
+<td>string</td>
+<td>point of application</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+</main>
+<script src="./js/g2.html.js"></script>
+<script src="./js/mec2.html.js"></script>
+</body>
+</html>
