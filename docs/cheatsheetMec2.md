@@ -117,7 +117,7 @@ Create a node by giving the required properties. Don't forget to put the propert
 
 #### **Example 2:** Result of constraints
 
-[see more hier](https://gislain1993.github.io/mec2-Dokumentation/microjam.md/drive.html)
+[see more here](https://gislain1993.github.io/mec2-Dokumentation/microjam.md/drive.html)
 
 </aside>
 
